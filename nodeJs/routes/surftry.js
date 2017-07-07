@@ -122,10 +122,40 @@ router.post('/login',function(req,res){
                                 				_userId: user._id,
                                 				pin: Math.floor(Math.random()*(999999-100000)+100000),
                                 				wallet_pass: password,
+								//rec_add: crypto.randomBytes(16).toString('hex'),
                                 				guid: guid,
                                 				xpub_add: add
                         				});
 
+							/*var data = JSON.stringify({
+                                                		api_code: 'cd0ebd41-3673-4096-8698-fdf738dbdf2e',
+                                                		//email: email,
+                                                		//guid: wallet.guid,
+                                                		//xpub: wallet.xpub_add,
+                                                		password: password
+                                        		});
+
+                                        		var options = {
+                                                		host: 'localhost',
+                                                		port: 3030,
+                                                		path: '/merchant/'+wall.guid+'/accounts/'+wall.xpub_add+'/receiveAddress',
+                                                		method: 'POST',
+                                                		headers: {
+                                                        		'Content-Type': 'application/json'
+                                                		}
+                                        		};
+
+                                        		var req = http.request(options, function(response){
+                                                		response.setEncoding('utf8');
+                                                		response.on('data', function (chunk) {
+                                                        		chunk = JSON.parse(chunk);
+                                                        		//res.json({"recieving address":chunk.address});
+                                                        		//var address= chunk.address;
+									wall.rec_add=chunk.address;
+                                                		});
+                                        		});
+                                        		req.write(data);
+                                        		req.end();*/
 					 	bcrypt.genSalt(10, function(err,salt){
                         				if(err){
                                 				console.log("Error in Encryption");

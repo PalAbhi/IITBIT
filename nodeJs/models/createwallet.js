@@ -9,6 +9,10 @@ var crwallSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	pinCreated: {
+		type: Boolean,
+		default: false
+	},
 	wallet_pass: {
 		type: String,
 		requires: true
@@ -17,6 +21,10 @@ var crwallSchema = mongoose.Schema({
                 type: String,
 		required: true
 	},
+	/*rec_add:{
+		type:String,
+		required:true
+	},*/
         xpub_add: {
                 type: String,
                 required: true
